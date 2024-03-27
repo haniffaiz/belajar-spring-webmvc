@@ -11,6 +11,7 @@ class HelloServiceImplTest {
 
     @Autowired
     private HelloService helloService;
+    //yang di expose interfacenya
 
     @Test
     void helloGuest() {
