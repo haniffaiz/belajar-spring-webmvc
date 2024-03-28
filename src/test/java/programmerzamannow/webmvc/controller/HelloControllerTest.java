@@ -61,4 +61,13 @@ class HelloControllerTest {
                 content().string(Matchers.containsString("Hello Hanif"))
         );
     }
+
+    @Test
+    void helloRedirect() throws Exception {
+        mockMvc.perform(
+                get("/web/hello")
+        ).andExpectAll(
+                status().is3xxRedirection()
+        );
+    }
 }

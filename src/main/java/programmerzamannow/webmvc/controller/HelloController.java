@@ -34,6 +34,9 @@ public class HelloController {
     public ModelAndView hello(@RequestParam(name = "name",required = false) String name,
                                    HttpServletResponse response) throws IOException {
 
+        if (Objects.isNull(name)){
+            return new ModelAndView("redirect:/web/hello?name=Guest");
+        }
         return new ModelAndView("hello", Map.of(
                 "title","Belajar View",
                 "name",name
